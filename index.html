@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        fetch('https://raw.githubusercontent.com/yebekhe/MTProtoCollector/main/proxy/mtproto.json')
+    .then(response => response.json())
+    .then(data => {
+        // Choose a random index from the array of URLs
+        const randomIndex = Math.floor(Math.random() * data.length);
+        const chosenItem = data[randomIndex];
+
+        // Modify the link by replacing 'https://t.me/' with 'tg://'
+        const modifiedLink = chosenItem.link.replace('https://t.me/', 'tg://');
+        window.location.href = modifiedLink; // Redirect to the modified URL
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+    </script>
+</head>
+<body>
+    <h1>Redirecting in 3 seconds...</h1>
+</body>
+</html>
